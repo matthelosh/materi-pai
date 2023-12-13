@@ -1,8 +1,10 @@
 <template>
     <div class="relative min-h-screen flex items-center justify-center">
-        <div class="decoration">
+        <div class="decoration w-full absolute h-full">
             <img src="/img/awan-1.svg" alt="Pohon Warna Warni 1" class="absolute right-[30%] top-0">
-            <img src="/img/pohon.svg" alt="Pohon Warna Warni 1" class="absolute right-[30%] bottom-0">
+            <img src="/img/taman.svg" alt="Taman" class="absolute bottom-0">
+            <img src="/img/masjid.svg" alt="Masjid" class="absolute right-[30%] -bottom-20">
+            <img src="/img/santri.svg" alt="Mengaji" class="absolute -right-40 bottom-0">
         </div>
         <section class="main relative text-center">
             <LinkButton class="text-center" to="/">
@@ -12,7 +14,7 @@
             <NuxtLink
                 v-for="(kelas,i) in kelases"
                 :key="i"
-                class="p-4 flex m-4 justify-center text-white font-loveya text-xl tracking-wider font-bold rounded-xl shadow hover:shadow-xl hover:-translate-y-[5px] transition-all"
+                class="p-4 flex m-4 justify-center text-white font-loveya text-xl tracking-wider font-bold rounded-xl shadow hover:shadow-xl hover:-translate-y-[5px] transition-all border-4 border-white"
                 :to="kelas.url"
                 :style="`background: ${kelas.bg}`"
             >
