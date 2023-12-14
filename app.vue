@@ -1,11 +1,11 @@
 <template>
   <div class="relative w-screen w-max-screen h-[100vh] h-max-screen bg-[#cce9ff] overflow-y-auto overflow-x-hidden">
-    <div class="navbar fixed top-0 z-10 w-full bg-slate-400 h-10 flex items-center justify-center gap-4 text-white">
+    <div class="navbar fixed top-0 z-10 w-full bg-green-600 shadow-lg h-10 flex items-center justify-center gap-4 text-white">
       <NuxtLink to="/">
-        Beranda
+        <Icon name="mdi:home" size="32" />
       </NuxtLink>
       <NuxtLink to="/about">
-        Tentang Aplikasi
+        <Icon name="mdi:information" size="32" />
       </NuxtLink>
     </div>
     <NuxtPage />

@@ -7,25 +7,23 @@
             <img src="/img/santri.svg" alt="Mengaji" class="absolute -right-40 bottom-0">
         </div>
         <section class="main relative text-center">
-            <LinkButton class="text-center" to="/">
-                <Icon name="mdi:arrow-u-left-top" size="32" class="text-white" />
-            </LinkButton>
-            <h1 class="text-center text-xl font-bold uppercase text-white drop-shadow-md">Pilih Kelas Kamu</h1>
-            <NuxtLink
-                v-for="(kelas,i) in kelases"
-                :key="i"
-                class="p-4 flex m-4 justify-center text-white font-loveya text-xl tracking-wider font-bold rounded-xl shadow hover:shadow-xl hover:-translate-y-[5px] transition-all border-4 border-white"
-                :to="kelas.url"
-                :style="`background: ${kelas.bg}`"
-            >
-                {{ kelas.label }}
-            </NuxtLink>
+            <h1 class="text-center text-xl font-bold uppercase text-gray-600 drop-shadow-md">Pilih Kelas Kamu</h1>
+                
+                <NuxtLink
+                    v-for="(kelas,i) in kelases"
+                    :key="i"
+                    class="animate__animated animate__flipInX p-4 flex m-4 justify-center text-white font-loveya text-xl tracking-wider font-bold rounded-xl shadow hover:shadow-xl hover:-translate-y-[5px] transition-all border-4 border-white"
+                    :to="kelas.url"
+                    :style="`background: ${kelas.bg}`"
+                >
+                    {{ kelas.label }}
+                </NuxtLink>
         </section>
     </div>
 </template>
 
 <script setup>
-const tes = ref('Halo')
+const num = ref(0)
 const kelases = ref([
     {
         id: 1,
@@ -64,4 +62,22 @@ const kelases = ref([
         bg: '#98D8AA'
     },
 ])
+onMounted(() => {
+
+})
 </script>
+
+<style>
+.fade-in-enter-active {
+  transition: all 0.5s ease;
+}
+
+.fade-in-leave-active {
+  transition: all 0.5s ease;
+}
+
+.fade-in-enter, .fade-in-leave-to {
+    transform: translateX(-100px);
+  opacity: 0;
+}
+</style>
