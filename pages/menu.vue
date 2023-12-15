@@ -19,6 +19,9 @@
                     {{ kelas.label }}
                 </NuxtLink>
         </section>
+        <audio autoplay>
+            <source src="/sounds/pilih-kelas.mp3" type="audio/mpeg" />
+        </audio>
     </div>
 </template>
 

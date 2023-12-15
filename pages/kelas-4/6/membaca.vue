@@ -34,6 +34,9 @@
                 <LazyQuizKelas4Lesson6Subone />
             </article>
         </div>
+        <audio autoplay>
+            <source src="/sounds/kelas-4/p6/membaca-qs-attin.mp3" type="audio/mpeg" />
+        </audio>
     </div>
 </template>
 

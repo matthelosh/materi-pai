@@ -12,6 +12,9 @@
                     </li>
                 </ol>
             </div>
+            <audio autoplay>
+                <source src="/sounds/pilih-pembelajaran.mp3" type="audio/mpeg" />
+            </audio>
         </div>
     </div>
 </template>
