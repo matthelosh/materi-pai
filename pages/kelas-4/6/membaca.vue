@@ -6,7 +6,7 @@
                 <img src="/img/mengaji.png" alt="Mengaji" class="h-32 w-full object-cover object-center" />
             </figure>
             <h1 class="font-bold text-center my-2">Simak Video Materi Di Bawah ini</h1>
-            <iframe class="w-[90%] mx-auto animate__animated animate__fadeInUp"  src="https://www.youtube.com/embed/yzvkrw64-kM"></iframe>
+            <iframe class="w-[90%] h-[300px] sm:w-[600px] mx-auto animate__animated animate__fadeInUp"  src="https://www.youtube.com/embed/yzvkrw64-kM"></iframe>
             <article class="quran text-center my-2 text-xl p-4 bg-white mx-4 rounded shadow animate__animated animate__fadeInUp">
                 <p class="mb-4">بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ</p>
                 <p class="my-3">وَالتِّينِ وَالزَّيْتُونِ <span class="ayah">&#1633</span></p>
