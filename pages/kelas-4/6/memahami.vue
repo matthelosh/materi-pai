@@ -8,12 +8,10 @@
             <img src="/img/kelas-4/p6/peta-6-2.svg" alt="Peta konsep" class="drop-shadow-lg">
             <figcaption class="text-center text-xs -mt-4 italic text-gray-500">Peta Kegiatan Belajar</figcaption>
         </figure>
-        <section class="video-materi w-full my-2">
-            Video Materi
-        </section>
         <section class="ringkasan">
             <article class="mengartikan animate__animated animate__fadeInLeft" v-if="mode == 'mengartikan'">
                 <h1 class="text-lg font-bold text-gray-700">Mengartikan QS At-Tin</h1>
+                <iframe class="w-full sm:w-560 sm:mx-auto" src="https://www.youtube.com/embed/itjP4qQP5YY?si=PNGZmPtg-U029t6L" title="Mengartikan QS At-Tin" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <p>Perhatikan arti kata dalam surah At-Tin berikut!</p>
                 <table class="border border-collapse border-1 border-black w-full">
                     <tr class="bg-green-200">
