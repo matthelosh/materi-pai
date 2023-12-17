@@ -11,13 +11,14 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
-    '@nuxtjs/google-analytics',
+    'nuxt-gtag'
   ],
+  gtag: {
+    id: 'G-QKL7B3VXD0',
+    config: {
+      page_title: 'ABID'
+    }
+  },
   
   css: ['animate.css'],
-  runtimeConfig: {
-    public: {
-      gtagId: 'G-QKL7B3VXD0'
-    }
-  }
 })
