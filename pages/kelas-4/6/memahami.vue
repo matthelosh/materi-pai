@@ -66,6 +66,19 @@
                 
 
             </article>
+            <div class="hafalan w-full my-4">
+                <h1 class="text-center bg-green-500 py-3 text-amber-200 font-bold tracking-wide text-lg">Klik ayat untuk menampilkan artinya</h1>
+                <div v-for="(ayah, a) in ayahs" :key="a" >
+                    <div @click="toggleArti" class="quran my-2  py-1 px-3  border-b">
+                        <p class="text-rtl rtl text-right">
+                            {{ ayah.text }} ({{ a+1 }})
+                        </p>
+                        <div class="arti hidden animate__animated animate__fadeIn">
+                            {{ artis[a] }}
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="latihan w-full my-4  p-2 bg-green-500 text-white">
                 <p class="my-2 font-bold tracking-wide text-justify">Ayo latihan! Klik ayat dibawah dan pilih artinya!</p>
                 <div class="quran bg-green-600 p-3 shadow" @click="guessArti">
@@ -156,6 +169,13 @@ const checkArti = (answer) => {
         }
     }, 500)
 }
+
+const toggleArti = (e) => {
+    let parent = e.target.closest(".quran")
+    let arti = parent.querySelector(".arti")
+    // console.log(parent)
+    arti.classList.toggle("hidden")
+} 
 
 onMounted(() => {
     randomAyah()
