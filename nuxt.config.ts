@@ -11,6 +11,13 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
+    '@nuxtjs/google-analytics',
   ],
-  css: ['animate.css']
+  
+  css: ['animate.css'],
+  runtimeConfig: {
+    public: {
+      gtagId: 'G-QKL7B3VXD0'
+    }
+  }
 })
