@@ -7,9 +7,35 @@
         <figure>
             <img src="/img/kelas-4/p6/peta-6-2.svg" alt="Peta konsep" class="drop-shadow-lg">
             <figcaption class="text-center text-xs -mt-4 italic text-gray-500">Peta Kegiatan Belajar</figcaption>
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="background-color: pink;width:100%;height: 300px;">
+                <g>
+                    <rect x="0" y="40" rx="3" ry="3" width="40" height="25" style="fill:#060c36;stroke: green; stroke-width: 1px;"  />
+                    <foreignObject x="3" y="42" width="100" height="200">
+                        <p xmlns="http://www.w3.org/1999/xhtml" style="font-size: 0.1em;color: white;line-height: 4em;r">Memahami <br>Pesan Pokok <br>QS. At-Tin</p>
+                    </foreignObject>
+                </g>
+                <g>
+                    <rect x="60" y="10" rx="3" ry="3" width="40" height="15" fill="#ff667a" stroke="#eafa23" stroke-width="1px" @click="mode = 'mengartikan'" />
+                    <foreignObject x="63" y="13" width="38" height="80">
+                        <p xmlns="http://www.w3.org/1999/xhtml" style="font-size: 6px; color: white;">Mengartikan</p>
+                    </foreignObject>
+                </g>
+                <g>
+                    <rect x="60" y="44" rx="3" ry="3" width="40" height="15" fill="#ff667a" stroke="#eafa23" stroke-width="1px" @click="mode = 'informasi'" />
+                    <foreignObject x="63" y="47" width="38" height="80">
+                        <p xmlns="http://www.w3.org/1999/xhtml" style="font-size: 6px; color: white;">Informasi</p>
+                    </foreignObject>
+                </g>
+                <g>
+                    <rect x="60" y="79" rx="3" ry="3" width="40" height="15" fill="#ff667a" stroke="#eafa23" stroke-width="1px" />
+                    <foreignObject x="63" y="82" width="38" height="80">
+                        <p xmlns="http://www.w3.org/1999/xhtml" style="font-size: 6px; color: white;">Penjelasan</p>
+                    </foreignObject>
+                </g>
+            </svg>
         </figure>
-        <section class="ringkasan">
-            <article class="mengartikan animate__animated animate__fadeInLeft" v-if="mode == 'mengartikan'">
+        <section class="ringkasan" v-if="mode == 'mengartikan'">
+            <article class="mengartikan animate__animated animate__fadeInLeft" >
                 <h1 class="text-lg font-bold text-gray-700">Mengartikan QS At-Tin</h1>
                 <iframe class="w-full sm:w-560 sm:mx-auto" src="https://www.youtube.com/embed/itjP4qQP5YY?si=PNGZmPtg-U029t6L" title="Mengartikan QS At-Tin" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <p>Perhatikan arti kata dalam surah At-Tin berikut!</p>
@@ -69,7 +95,7 @@
             <div class="hafalan w-full my-4">
                 <h1 class="text-center bg-green-500 py-3 text-amber-200 font-bold tracking-wide text-lg">Klik ayat untuk menampilkan artinya</h1>
                 <div v-for="(ayah, a) in ayahs" :key="a" >
-                    <div @click="toggleArti" class="quran my-2  py-1 px-3  border-b">
+                    <div @click="toggleArti($event, a)" class="quran my-2  py-1 px-3  border-b">
                         <p class="text-rtl rtl text-right">
                             {{ ayah.text }} ({{ a+1 }})
                         </p>
@@ -92,8 +118,8 @@
                 </div>
             </div>
         </section>
-        <section class="evaluasi mb-20">
-            t
+        <section class="evaluasi mb-20" v-if="mode == 'informasi'">
+            Informasi Ayat
             <!-- <LazyQuizKelas4Lesson6Subtwo /> -->
         </section>
     </div>
@@ -160,7 +186,6 @@ const guessArti = () => {
 const checkArti = (answer) => {
     setTimeout(()=>{
         if(answer == ayahs.value[ayah.value].arti) {
-            
                 alert('Betul')
                 randomAyah()
                 showArti.value = false
@@ -170,11 +195,14 @@ const checkArti = (answer) => {
     }, 500)
 }
 
-const toggleArti = (e) => {
+const toggleArti = (e, index) => {
     let parent = e.target.closest(".quran")
     let arti = parent.querySelector(".arti")
     // console.log(parent)
-    arti.classList.toggle("hidden")
+    arti.classList.toggle("hidden");
+    let sound = new Audio(`/sounds/kelas-4/p6/arti-attin-${index+1}.mp3`)
+    if(!arti.classList.contains("hidden")) {sound.play()} else {sound.pause; sound.currentTime = 0;};
+    
 } 
 
 onMounted(() => {

@@ -1,6 +1,10 @@
 <template>
     <div class="w-full h-full pt-10 overflow-y-auto">
+        
         <div class="content w-full mb-32">
+            <audio autoplay controls class="absolute z-10 h-6 w-[96%]">
+                <source src="/sounds/kelas-4/p6/membaca-qs-attin.mp3" type="audio/mpeg" />
+            </audio>
             <figure class="relative">
                 <h1 class="absolute left-0 right-0 bottom-0 text-2xl bg-white p-2 bg-opacity-80 shadow font-loveya max-auto">Membaca QS. At-Tin/95</h1>
                 <img src="/img/mengaji.png" alt="Mengaji" class="h-32 w-full object-cover object-center" />
@@ -8,16 +12,17 @@
             <h1 class="font-bold text-center my-2">Simak Video Materi Di Bawah ini</h1>
             <iframe class="w-[90%] h-[300px] sm:w-[600px] mx-auto animate__animated animate__fadeInUp"  src="https://www.youtube.com/embed/yzvkrw64-kM"></iframe>
             <article class="quran text-center my-2 text-xl p-4 bg-white mx-4 rounded shadow animate__animated animate__fadeInUp">
-                <p class="mb-4">بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ</p>
-                <p class="my-3">وَالتِّينِ وَالزَّيْتُونِ <span class="ayah">&#1633</span></p>
-                <p class="my-3"> وَطُورِ سِينِينَ <span class="ayah">&#1634</span></p>
-                <p class="my-3"> وَهَٰذَا الْبَلَدِ الْأَمِينِ <span class="ayah">&#1635</span></p>
-                <p class="my-3"> لَقَدْ خَلَقْنَا الْإِنْسَانَ فِي أَحْسَنِ تَقْوِيمٍ <span class="ayah">&#1636</span></p>
-                <p class="my-3"> ثُمَّ رَدَدْنَاهُ أَسْفَلَ سَافِلِينَ <span class="ayah">&#1637</span></p>
-                <p class="my-3"> إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ فَلَهُمْ أَجْرٌ غَيْرُ مَمْنُونٍ <span class="ayah">&#1638</span></p>
-                <p class="my-3"> فَمَا يُكَذِّبُكَ بَعْدُ بِالدِّينِ <span class="ayah">&#1639</span></p>
-                <p class="my-3"> أَلَيْسَ اللَّهُ بِأَحْكَمِ الْحَاكِمِينَ <span class="ayah">&#1640</span></p>
-                <p class="my-3"></p>
+                <h1 class="text-md leading-5 mb-2 pb-2 border-b border-b-2">Klik Ayat untuk mendengarkan contoh bacaannya</h1>
+                <p class="mb-4 hover:cursor-pointer active:text-green-500" @click="playAyah(0)">بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ</p>
+                <p class="my-3 hover:cursor-pointer active:text-green-500" @click="playAyah(1)">وَالتِّينِ وَالزَّيْتُونِ <span class="ayah">&#1633</span></p>
+                <p class="my-3 hover:cursor-pointer active:text-green-500" @click="playAyah(2)"> وَطُورِ سِينِينَ <span class="ayah">&#1634</span></p>
+                <p class="my-3 hover:cursor-pointer active:text-green-500" @click="playAyah(3)"> وَهَٰذَا الْبَلَدِ الْأَمِينِ <span class="ayah">&#1635</span></p>
+                <p class="my-3 hover:cursor-pointer active:text-green-500" @click="playAyah(4)"> لَقَدْ خَلَقْنَا الْإِنْسَانَ فِي أَحْسَنِ تَقْوِيمٍ <span class="ayah">&#1636</span></p>
+                <p class="my-3 hover:cursor-pointer active:text-green-500" @click="playAyah(5)"> ثُمَّ رَدَدْنَاهُ أَسْفَلَ سَافِلِينَ <span class="ayah">&#1637</span></p>
+                <p class="my-3 hover:cursor-pointer active:text-green-500" @click="playAyah(6)"> إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ فَلَهُمْ أَجْرٌ غَيْرُ مَمْنُونٍ <span class="ayah">&#1638</span></p>
+                <p class="my-3 hover:cursor-pointer active:text-green-500" @click="playAyah(7)"> فَمَا يُكَذِّبُكَ بَعْدُ بِالدِّينِ <span class="ayah">&#1639</span></p>
+                <p class="my-3 hover:cursor-pointer active:text-green-500" @click="playAyah(8)"> أَلَيْسَ اللَّهُ بِأَحْكَمِ الْحَاكِمِينَ <span class="ayah">&#1640</span></p>
+                <p class="my-3 hover:cursor-pointer active:text-green-500" @click="playAyah(9)"></p>
             </article>
             <article class="my-2 text-xl p-4 bg-white mx-4 rounded shadow animate__animated animate__fadeInUp">
                 <h1 class="mb-2 font-bold">Tugas Terstruktur</h1>
@@ -34,11 +39,28 @@
                 <LazyQuizKelas4Lesson6Subone />
             </article>
         </div>
-        <audio autoplay>
-            <source src="/sounds/kelas-4/p6/membaca-qs-attin.mp3" type="audio/mpeg" />
-        </audio>
+        
     </div>
 </template>
+
+<script setup>
+const playAyah = (ayah) => {
+    let sound = new Audio(sounds[ayah])
+    sound.play()
+}
+
+const sounds = [
+    '/sounds/bismillah.mp3', 
+    '/sounds/kelas-4/p6/attin-1.mp3',
+    '/sounds/kelas-4/p6/attin-2.mp3',
+    '/sounds/kelas-4/p6/attin-3.mp3',
+    '/sounds/kelas-4/p6/attin-4.mp3',
+    '/sounds/kelas-4/p6/attin-5.mp3',
+    '/sounds/kelas-4/p6/attin-6.mp3',
+    '/sounds/kelas-4/p6/attin-7.mp3',
+    '/sounds/kelas-4/p6/attin-8.mp3',
+    ]
+</script>
 
 <style>
 .quran p {
