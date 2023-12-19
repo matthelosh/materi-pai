@@ -2,10 +2,11 @@
     <div class="w-full h-full pt-10 overflow-y-auto">
         
         <div class="content w-full mb-32">
-            <audio autoplay controls class="absolute z-10 h-6 w-[96%]">
-                <source src="/sounds/kelas-4/p6/membaca-qs-attin.mp3" type="audio/mpeg" />
-            </audio>
-            <figure class="relative">
+            
+            <figure class="relative w-full">
+                <audio autoplay controls class="h-6 w-full sm:w-[96%]">
+                    <source src="/sounds/kelas-4/p6/membaca-qs-attin.mp3" type="audio/mpeg" />
+                </audio>
                 <h1 class="absolute left-0 right-0 bottom-0 text-2xl bg-white p-2 bg-opacity-80 shadow font-loveya max-auto">Membaca QS. At-Tin/95</h1>
                 <img src="/img/mengaji.png" alt="Mengaji" class="h-32 w-full object-cover object-center" />
             </figure>
@@ -22,7 +23,32 @@
                 <p class="my-3 hover:cursor-pointer active:text-green-500" @click="playAyah(6)"> إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ فَلَهُمْ أَجْرٌ غَيْرُ مَمْنُونٍ <span class="ayah">&#1638</span></p>
                 <p class="my-3 hover:cursor-pointer active:text-green-500" @click="playAyah(7)"> فَمَا يُكَذِّبُكَ بَعْدُ بِالدِّينِ <span class="ayah">&#1639</span></p>
                 <p class="my-3 hover:cursor-pointer active:text-green-500" @click="playAyah(8)"> أَلَيْسَ اللَّهُ بِأَحْكَمِ الْحَاكِمِينَ <span class="ayah">&#1640</span></p>
-                <p class="my-3 hover:cursor-pointer active:text-green-500" @click="playAyah(9)"></p>
+            </article>
+            <article class="my-2 text-xl p-4 bg-white mx-4 rounded shadow animate__animated animate__fadeInUp">
+                <h1 class="font-bold">Belajar Tajwid</h1>
+                <h1 class="mb-2 italic text-sm">Hukum Nun Mati dan Tanwin</h1>
+                <img src="/img/kelas-4/p6/peta-nun-tanwin.svg" alt="Peta Hukum Nun Mati dan Tanwin" />
+                <p class="text-justify mb-2">Huruf Nun sukun atau harakat tanwin (fathatain, kasrotain, dhommatain) ketika bertemu huruf tertentu, maka cara membacanya juga beragam. Ada empat macam bacaan, yaitu:</p>
+                <h4 class="font-bold text-teal-600 italic">1. Idhar ( اظْهَار )</h4>
+                <p class="text-justify">Huruf nun mati atau tanwin harus dibaca jelas ketika bertemu dengan salah satu 6 huruf: <span class="text-rtl text-xl font-bold text-teal-500">( ء ه ع غ ح خ )</span>. Contoh: <span class="text-rtl text-xl">مِنْ غِلٍّ</span></p>
+                <img src="/img/kelas-4/p6/idhar.svg" alt="Idhar" />
+                <h4 class="mt-2 font-bold text-lime-600">2. Iqlab ( إقْلَبْ )</h4>
+                <p class="text-justify">Huruf nun mati atau tanwin harus dibaca menjadi suara mim sukun ( مْ ) ketika bertemu huruf ba' ( ب ). Contoh: <span>مِنْ بَعْضِ</span></p>
+                <img src="/img/kelas-4/p6/iqlab.svg" alt="Iqlab" class="h-48 mx-auto" />
+                <h4 class="mt-2 font-bold text-orange-600">Idghom ( إدْغَامْ )</h4>
+                <p class="text-justify">Suara huruf Nun mati dan Tanwin harus dihilangkan ketika bertemu dengan beberapa huruf berikut. Adakalanya disertai suara dengungan (ghunnah), adakalanya tanpa suara dengung (bila ghunnah).</p>
+                <ol class="list-[lower-latin] pl-8">
+                    <li>
+                        Bighunnah (berdengung): Ketika bertemu dengan huruf: ي ن م و. Contoh: شُعُوْبًا وَّقَبَائِلَ
+                    </li>
+                    <li>
+                        Bila ghunnah (tanpa berdengung): Ketika bertemu dengan huruf:  ل ر Contoh: غَفُوْرٌ رَّحِيْمٌ
+                    </li>
+                </ol>
+                <img src="/img/kelas-4/p6/idghom.svg" alt="Idghom" />
+                <h4 class="mt-2 font-bold text-orange-700">Ikhfa ( إخْفَاءْ )</h4>
+                <p class="text-justify">Suara nun mati atau tanwin harus dibaca samar ketika bertemu dengan huruf selain yang di atas, yaitu: ت ط س ش ث ذ ف ض ظ ج ز ك ص د ق. Contoh: الْاِنْسَانَ</p>
+                <img src="/img/kelas-4/p6/ikhfa.svg" alt="Ikhfa" />
             </article>
             <article class="my-2 text-xl p-4 bg-white mx-4 rounded shadow animate__animated animate__fadeInUp">
                 <h1 class="mb-2 font-bold">Tugas Terstruktur</h1>

@@ -66,12 +66,12 @@ const questions = ref([
         correct: 2
     },
     {
-        text: '<p>Putar dan dengarkan bacaan berikut dan tebak hukum bacaannya!<p><audio controls><source src="/sounds/kelas-4/p6/soal-membaca/laqod.mp3" type="audio/mpeg" /></audio>',
+        text: '<p>Putar dan dengarkan bacaan berikut dan tebak hukum bacaannya!<p><audio controls class="w-full"><source src="/sounds/kelas-4/p6/soal-membaca/laqod.mp3" type="audio/mpeg" /></audio>',
         options: ['Qalqalah','Idhar','Iqlab','Idgham'],
         correct: 0
     },
     {
-        text: '<p>Putar dan dengarkan bacaan berikut dan tebak hukum bacaannya! <span class="text-xl font-bold tetx-rtl"> (رٌ غَيْرُ) </span><p><audio controls><source src="/sounds/kelas-4/p6/soal-membaca/ajrun-ghoiru.mp3" type="audio/mpeg" /></audio>',
+        text: '<p>Putar dan dengarkan bacaan berikut dan tebak hukum bacaannya! <span class="text-xl font-bold tetx-rtl"> (رٌ غَيْرُ) </span><p><audio controls class="w-full"><source src="/sounds/kelas-4/p6/soal-membaca/ajrun-ghoiru.mp3" type="audio/mpeg" /></audio>',
         options: ['Qalqalah','Idhar','Iqlab','Idgham'],
         correct: 1
     },
