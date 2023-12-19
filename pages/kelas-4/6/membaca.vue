@@ -48,7 +48,7 @@
                 <img src="/img/kelas-4/p6/idghom.svg" alt="Idghom" />
                 <h4 class="mt-2 font-bold text-orange-700">Ikhfa ( إخْفَاءْ )</h4>
                 <p class="text-justify">Suara nun mati atau tanwin harus dibaca samar ketika bertemu dengan huruf selain yang di atas, yaitu: ت ط س ش ث ذ ف ض ظ ج ز ك ص د ق. Contoh: الْاِنْسَانَ</p>
-                <img src="/img/kelas-4/p6/ikhfa.svg" alt="Ikhfa" />
+                <img src="/img/kelas-4/p6/ikhfa.svg" alt="Ikhfa"  />
             </article>
             <article class="my-2 text-xl p-4 bg-white mx-4 rounded shadow animate__animated animate__fadeInUp">
                 <h1 class="mb-2 font-bold">Tugas Terstruktur</h1>

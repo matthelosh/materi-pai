@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-full pt-10 overflow-y-auto bg-white">
+    <div class="w-full h-full pt-10 overflow-y-auto bg-white pb-24">
         <figure class="relative">
             <h1 class="absolute left-0 right-0 bottom-0 text-green-800 text-2xl bg-white p-2 bg-opacity-80 shadow font-loveya max-auto">Memahami Pesan Pokok QS. At-Tin/95</h1>
             <img src="/img/kelas-4/p6/memahami.png" alt="Memahami QS At-Tin" class="h-32 w-full object-cover object-center" />
@@ -8,6 +8,11 @@
             <img src="/img/kelas-4/p6/peta-6-2.svg" alt="Peta konsep" class="drop-shadow-lg">
             <figcaption class="text-center text-xs -mt-4 italic text-gray-500">Peta Kegiatan Belajar</figcaption>
         </figure>
+        <div class="w-full flex gap-2 mt-8 mb-4 justify-center">
+            <button class="rounded shadow-lg active:shadow text-white px-2 py-1 uppercase bg-red-500" @click="mode = 'mengartikan'">Mengartikan</button>
+            <button class="rounded shadow-lg active:shadow text-white px-2 py-1 uppercase bg-orange-500" @click="mode = 'informasi'">Informasi</button>
+            <button class="rounded shadow-lg active:shadow text-white px-2 py-1 uppercase bg-yellow-500" @click="mode = 'penjelasan'">Penjelasan</button>
+        </div>
         <section class="ringkasan" v-if="mode == 'mengartikan'">
             <article class="mengartikan animate__animated animate__fadeInLeft" >
                 <h1 class="text-lg font-bold text-gray-700">Mengartikan QS At-Tin</h1>
@@ -94,8 +99,31 @@
                 </div>
             </div>
         </section>
-        <section class="evaluasi mb-20" v-if="mode == 'informasi'">
-            Informasi Ayat
+        <section class="infromasi mb-20 animate__animated animate__slideInLeft p-2" v-if="mode == 'informasi'">
+            <h1 class="font-bold text-slate-700">Informasi Surah At-Tin</h1>
+            <img src="/img/kelas-4/p6/info-attin.svg" alt="Informasi Surat At-Tin" />
+            <h1 class="mt-3">Perhatikan Ilustrasi di Bawah ini.</h1>
+            <div class="flex flex-wrap justify-center gap-2">
+                <figure class="my-3">
+                    <img src="https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2022/02/15032226/Catat-Ini-Manfaat-Buah-Tin-yang-Sayang-untuk-Dilewatkan-01.jpg.webp" alt="Buah Tin" class="w-[200px] mx-auto rounded-full aspect-square object-cover border-4 border-slate-300 shadow-lg">
+                    <figcaption class="text-sm italic text-gray-500 text-center">Buah Tin</figcaption>
+                </figure>
+                <figure class="my-3">
+                    <img src="https://yankes.kemkes.go.id/img/bg-img/gambarartikel_1656041283_496215.png" alt="Buah Zaitun" class="w-[200px] mx-auto rounded-full aspect-square object-cover border-4 border-slate-300 shadow-lg">
+                    <figcaption class="text-sm italic text-gray-500 text-center">Buah Zaitun</figcaption>
+                </figure>
+                <figure class="my-3">
+                    <img src="https://static.republika.co.id/uploads/images/inpicture_slide/gunung-sinai-_120618112753-360.jpg" alt="Gunung Sinai" class="w-[200px] mx-auto rounded-full aspect-square object-cover border-4 border-slate-300 shadow-lg">
+                    <figcaption class="text-sm italic text-gray-500 text-center">Gunung Sinai</figcaption>
+                </figure>
+                <figure class="my-3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS46wY--_XnYiP4YbQAdKcj8rITu9yblmf9gz1QVbSiY5XQ6-9-2-4a5iQ7hulLjfOJQu8&usqp=CAU" alt="Kota Mekah" class="w-[200px] mx-auto rounded-full aspect-square object-cover border-4 border-slate-300 shadow-lg">
+                    <figcaption class="text-sm italic text-gray-500 text-center">Kota Mekah</figcaption>
+                </figure>
+            </div>
+        </section>
+        <section class="penjelasan mb-20 animate__animated animate__slideInLeft" v-if="mode == 'penjelasan'">
+            Penjelasan Ayat
             <!-- <LazyQuizKelas4Lesson6Subtwo /> -->
         </section>
     </div>
